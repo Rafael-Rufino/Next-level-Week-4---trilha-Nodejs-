@@ -1,8 +1,18 @@
-import express from 'express';
+import 'reflect-metadata';
+import express from "express";
+import "./database";
+import {router} from "./routes";
 
 const app = express();
 
-/**
+app.use(express.json());
+app.use(router);
+
+app.listen(3000,
+    () => console.log("server is running"));
+
+
+    /**
  * GET => Burcas
  * POST => Salvar
  * PUT => Alterar
@@ -11,14 +21,3 @@ const app = express();
  */
 // Criando rotas
  //http://localhost:3000/users
-
-app.get("/", (request, response) => {
-    return response.json({message: "Hello Word _ NLW#4" })
-});
-
-app.post("/", (request, response) =>{
-    //recebeu os dados para salvar
-    return response.json({message: "Os dados foram salvos com sucessos!"})
-})
-app.listen(3000,
-    () => console.log("server is running"));
