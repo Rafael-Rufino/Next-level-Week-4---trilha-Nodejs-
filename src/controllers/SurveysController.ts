@@ -10,7 +10,7 @@ class SurveysController{
 
         const survey  = surveysRepository.create({
             title,
-            description 
+            description, 
             
         });
         await surveysRepository.save(survey);

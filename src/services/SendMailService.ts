@@ -6,6 +6,7 @@ import fs from 'fs';
 
 class SendMailService{
     private client: Transporter
+
     constructor(){
         nodemailer.createTestAccount().then(account =>{
             const transporter = nodemailer.createTransport({
@@ -14,14 +15,13 @@ class SendMailService{
                 secure: account.smtp.secure,
                 auth:{
                     user: account.user,
-                    pass:account.pass
+                    pass:account.pass,
                 }
             });
             this.client = transporter;
-        })
+        });
     }
-
-
+ 
 
     async execute(to: string, subject: string, variables: object, path: string ){
      

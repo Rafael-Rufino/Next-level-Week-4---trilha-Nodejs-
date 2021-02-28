@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
+import {resolve} from  'path';
+
 import { SurveysRepository } from "../repositories/SurveysRepository";
 import { SurveysUsersRepository } from "../repositories/SurveysUsersRepository";
 import { UsersRespository } from "../repositories/UsersRespository";
 import SendMailService from "../services/SendMailService";
-import {resolve} from  'path';
 
 class SendMailController {
   async execute(request: Request, response: Response) {
@@ -29,30 +30,27 @@ class SendMailController {
       });
     }
 
+    const npsPath = resolve(__dirname, "..", "views", "emails", "npsMail.hbs");
 
     const surveyUserAlreadyExists = await surveysUsersRepository.findOne({
-      where: [{user_id: user.id}, {value : null}],
+      where: {user_id: user.id, value: null},
       relations: ["user", "survey"],
 
     });
 
     const variables = {
       name: user.name,
-      title: survey.title, 
+      title: survey.title,
       description: survey.description,
-      user_id: user.id,
+      id: "",
       link: process.env.URL_MAIL,
     };
-    const npsPath = resolve(__dirname, "..", "views", "emails", "npsMail.hbs");
 
-
-
-    if(surveyUserAlreadyExists){
-      await SendMailService.execute(email, survey.title, variables, npsPath );
+    if (surveyUserAlreadyExists) {
+      variables.id = surveyUserAlreadyExists.id;
+      await SendMailService.execute(email, survey.title, variables, npsPath);
       return response.json(surveyUserAlreadyExists);
-
     }
-
 
 
     // Salvar as informações na atabela surveyUser
@@ -65,7 +63,7 @@ class SendMailController {
     await surveysUsersRepository.save(surveyUser);
 
     //Enviar e-mail para o usuario
-
+    variables.id = surveyUser.id;
 
     await SendMailService.execute(email, survey.title, variables, npsPath); 
 
