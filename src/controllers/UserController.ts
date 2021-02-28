@@ -23,7 +23,7 @@ class UserController{
 
         const user = usersRepository.create({
             name,
-            email
+            email,
         });
 
         await usersRepository.save(user);
