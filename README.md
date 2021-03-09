@@ -6,16 +6,12 @@
   - [:bookmark: Sobre](#bookmark-sobre)
   - [:rocket: Tecnologias Utilizadas](#rocket-tecnologias-utilizadas)
   - [:heavy_check_mark: :computer: Diagrama](#heavy_check_mark-computer-diagrama)
-  - [:heavy_check_mark: :computer: Aplicação Web](#heavy_check_mark-computer-aplicação-web)
   - [:fire: Como executar](#fire-como-executar)
   - [:recycle: Como contribuir](#recycle-como-contribuir)
 
 </br>
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="https://github.com/rocketseat-education/nlw-04-nodejs/blob/main/.github/preview.png?raw=true.png">
-    <br><br>
-    <b> Plataforma pra incentivar a pratica de exercicios fisicos!</b>  
-    <br>
+    <img alt="Logo" title="#logo" width="900px" src="https://github.com/rocketseat-education/nlw-04-nodejs/blob/main/.github/preview.png?raw=true.png">
 </h3>
 
 
@@ -50,16 +46,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ## :heavy_check_mark: :computer: Diagrama
 
-**[Diagrama](https://github.com/rocketseat-education/nlw-04-nodejs/blob/main/public/diagrama.png?raw=true)**;
-
-
-
-## :heavy_check_mark: :computer: Aplicação Web
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="https://github.com/rocketseat-education/nlw-04-nodejs/blob/main/.github/preview.png?raw=true.png">
+    <img alt="Logo" title="#logo" width="900px" src="https://github.com/rocketseat-education/nlw-04-nodejs/blob/main/public/diagrama.png?raw=true">
 
 </h3>
-
 
 
 ## :fire: Como executar
