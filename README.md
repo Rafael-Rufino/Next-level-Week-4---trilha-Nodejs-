@@ -89,7 +89,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 🎓 **Quem ministrou?**
 
-As aulas foram ministradas pelo mestre Diego Fernandes - Instructor - Rocketseat nas aulas do Next Level Week.
+As aulas foram ministradas pelo Instrutora Daniele Leão - Instructor - Rocketseat nas aulas do Next Level Week.
 
 📝 **License**
 
